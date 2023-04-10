@@ -18,22 +18,54 @@ code {
 }
 
 .exhibit {
-  background-color: #105978;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 20px;
-  padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 2px 50px rgba(0, 0, 0, 0.1);
+	margin: 20px;
+	padding: 20px;
+	transition: transform 0.3s ease-in-out;
+}
+
+@keyframes rainbow {
+	0% { box-shadow: 0px 0px 10px #0f639f; }
+	20% { box-shadow: 0px 0px 10px #2472b2; }
+	40% { box-shadow: 0px 0px 10px #4790c0; }
+	60% { box-shadow: 0px 0px 10px #7cb9e4; }
+	80% { box-shadow: 0px 0px 10px #b2d8ed; }
+	100% { box-shadow: 0px 0px 10px #e1f2f8; }
+  }
+
+.exhibit:hover {
+	transform: scale(1.01);
+	z-index: 1;
+	animation: rainbow 10s infinite;
 }
 
 .exhibit-title {
-  margin: 0 0 10px;
-  font-weight: bold;
+	margin: 0 0 10px;
+	font-weight: bold;
 }
-
 
 .exhibit-content {
 	margin-top: 10px;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 20px;
-  }
+}
+
+.exhibit-card {
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 20px;
+	margin-bottom: 20px;
+	background-color: white;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	min-height: 15vh;
+	transition: transform 0.15s ease-in-out;
+}
+
+.exhibit-card:hover {
+	transform: scale(1.02);
+	z-index: 1;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	animation: rainbow 10s infinite;
+}
